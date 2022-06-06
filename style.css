@@ -55,12 +55,20 @@ div p span{
     border-radius: 5px;
     font-size: 1.5rem;
     font-weight: bold;
+    appearance: none;
     
     
 }
-input:focus{
+/* input:focus{
     background-color: pink ;
+} */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
+
 button{
     background-color: blueviolet;
     color: white;
