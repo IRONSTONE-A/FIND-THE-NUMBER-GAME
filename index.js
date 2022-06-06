@@ -11,7 +11,7 @@ input.focus();
 
 const guessGame = function(){
 
-    if(chance >= 1){
+    if(chance > 1){
         if(input.value > 100 || input.value < 0){
             enterNumber.innerHTML = "Please enter a valid number";
         } else{
@@ -31,24 +31,22 @@ const guessGame = function(){
                 
 
             } else if(input.value == random){
+               
                 enterNumber.innerHTML = 'Congratulations, you guessed right.'
                 enterNumber.style.color = "red"
                 enterNumber.style.fontSize = "30px"
                 chance--;
                 clickNumber++;
-                
-                
-                
-
                            
             }
         }
     
-    } else {
+    } 
+  
+    else {
         enterNumber.innerHTML = 'Game Over';
         input.style.display = 'none';
-        chance--;
-        clickNumber++;
+        
         
     }
     document.querySelector('.chance-span').innerHTML = chance;
