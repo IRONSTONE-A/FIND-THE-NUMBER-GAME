@@ -3,6 +3,7 @@ let input = document.querySelector(".input-number");
 let check = document.querySelector('.check');
 let restart = document.querySelector('.restart');
 let enterNumber = document.querySelector('.enter-number');
+
 let chance = 7;
 let clickNumber =0;
 input.focus();
@@ -11,7 +12,7 @@ input.focus();
 
 const guessGame = function(){
 
-    if(chance > 1){
+    if(chance > 0){
         if(input.value > 100 || input.value < 0){
             enterNumber.innerHTML = "Please enter a valid number";
         } else{
@@ -31,8 +32,10 @@ const guessGame = function(){
                 
 
             } else if(input.value == random){
-               
                 enterNumber.innerHTML = 'Congratulations, you guessed right.'
+                input.style.display = 'none';
+                check.style.display = 'none';
+                document.querySelector(".chances").style.display = 'none';
                 enterNumber.style.color = "red"
                 enterNumber.style.fontSize = "30px"
                 chance--;
